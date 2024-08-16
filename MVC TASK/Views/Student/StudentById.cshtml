@@ -1,0 +1,12 @@
+﻿<!-- Views/Student/StudentById.cshtml -->
+@model StudentMvcApp.Models.Student
+
+<h2>Student Details</h2>
+
+<div>
+    <img src="@Model.Img" alt="Student Image" width="150" />
+    <h3>@Model.Name</h3>
+    <p>@Model.Address</p>
+</div>
+
+<a href="@Url.Action("GetAllStudent", "Student")" class="btn btn-secondary">Back to List</a>

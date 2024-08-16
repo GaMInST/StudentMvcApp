@@ -1,0 +1,30 @@
+﻿<!-- Views/Student/GetAllStudent.cshtml -->
+@model IEnumerable<StudentMvcApp.Models.Student>
+
+<h2>Student List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td><img src="@student.Img" alt="Student Image" width="50" /></td>
+                <td>@student.Name</td>
+                <td>@student.Address</td>
+                <td>
+                    <a href="@Url.Action("StudentById", "Student", new { id = student.Id })">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("AddStudent", "Student")" class="btn btn-primary">Add Student</a>
